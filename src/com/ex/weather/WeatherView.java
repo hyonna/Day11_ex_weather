@@ -5,24 +5,14 @@ import java.util.ArrayList;
 public class WeatherView {
 	
 	public void view(String str) {
-		
-		
 		System.out.println(str);
-		
-		
-		
 	}
 
 	public void view(ArrayList<Weather> weathers) {
-
 		for (int i = 0; i < weathers.size(); i++) {
-
 			Weather w = weathers.get(i);
-
 			this.view(w);
-
 		}
-
 	}
 
 	public void view(Weather w) {

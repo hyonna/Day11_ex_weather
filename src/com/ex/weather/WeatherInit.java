@@ -107,7 +107,7 @@ public class WeatherInit {
 
 			if (weathers.get(i).getCity().equals(city)) {
 
-				weathers.get(i);
+				w = weathers.get(i);
 
 				break;
 			}

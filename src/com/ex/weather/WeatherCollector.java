@@ -21,7 +21,7 @@ public class WeatherCollector {
 
 	public void start() {
 
-		weathers = winit.getWeathers();
+		weathers = winit.getWeathers();	// weather 객체가 여러개 들어가 있는 배열
 
 		boolean check = true;
 		while (check) {
@@ -36,24 +36,20 @@ public class WeatherCollector {
 			switch (select) {
 
 			case 1:
-				Weather w = winit.setWeather();
-				weathers.add(w);
+				Weather w = winit.setWeather();	// 웨더 객체를 새로 만들어서 w 에 대입
+				weathers.add(w);				// weathers Arraylist 에 추가
 				break;
 			case 2:
-				Weather w1 = winit.findWeather(weathers);
+				Weather foundWeather = winit.findWeather(weathers);
 
-				if (w1 != null) {
-
-					wv.view(w1);
-					
+				if (foundWeather != null) {
+					wv.view(foundWeather);
 				} else {
-
 					wv.view("찾는 도시가 없습니다");
 				}
-
 				break;
 			case 3:
-				String str = winit.deleteWeather(weathers);
+				String str = winit.deleteWeather(weathers);	// str ="삭제가 완료되었습니다"
 				wv.view(str);
 				break;
 			case 4:
@@ -61,8 +57,7 @@ public class WeatherCollector {
 				break;
 			default:
 				System.out.println("종료합니다");
-				check = !check;
-
+				check = !check;	//true => false;
 			}
 
 		}
